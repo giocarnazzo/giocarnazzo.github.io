@@ -1,10 +1,17 @@
 [
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
+    "objectID": "major_project.html",
+    "href": "major_project.html",
+    "title": "Major Project 1",
     "section": "",
-    "text": "This is Giovanni Carnazzo’s sports blog. On this page, he is looking into statistical norms and abnormalities which tell help journalists tell stories."
+    "text": "This is an R Markdown Notebook. When you execute code within the notebook, the results appear beneath the code.\nTry executing this chunk by clicking the Run button within the chunk or by placing your cursor inside it and pressing Cmd+Shift+Enter.\n\nlibrary(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ ggplot2   3.5.1     ✔ tibble    3.2.1\n✔ lubridate 1.9.3     ✔ tidyr     1.3.1\n✔ purrr     1.0.2     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\n\n```\nAdd a new chunk by clicking the Insert Chunk button on the toolbar or by pressing Cmd+Option+I.\nWhen you save the notebook, an HTML file containing the code and output will be saved alongside it (click the Preview button or press Cmd+Shift+K to preview the HTML file).\nThe preview shows you a rendered HTML copy of the contents of the editor. Consequently, unlike Knit, Preview does not run any R code chunks. Instead, the output of the chunk when it was last run in the editor is displayed."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "GiosSportsBlog",
+    "section": "",
+    "text": "Does Bobby Witt Jr. Deserve an MVP in 2024?\n\n\n\n\n\n\nmlb\n\n\nbaseball\n\n\nkansas city royals\n\n\n\n\n\n\n\n\n\nNov 5, 2024\n\n\nGiovanni Carnazzo\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/bobby-witt-jr-baseball-mlb-mvp-race/index.html",
@@ -14,10 +21,10 @@
     "text": "Bobby Witt Jr. had a historic season in 2024. He deserves to win an MVP.\n\n\nCode\nlibrary(tidyverse)\n\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ ggplot2   3.5.1     ✔ tibble    3.2.1\n✔ lubridate 1.9.3     ✔ tidyr     1.3.1\n✔ purrr     1.0.2     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors"
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "GiosSportsBlog",
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
     "section": "",
-    "text": "Does Bobby Witt Jr. Deserve an MVP in 2024?\n\n\n\n\n\n\nmlb\n\n\nbaseball\n\n\nkansas city royals\n\n\n\n\n\n\n\n\n\nNov 5, 2024\n\n\nGiovanni Carnazzo\n\n\n\n\n\n\nNo matching items"
+    "text": "This is Giovanni Carnazzo’s sports blog. On this page, he is looking into statistical norms and abnormalities which tell help journalists tell stories."
   }
 ]
