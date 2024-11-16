@@ -189,125 +189,39 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
-<div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>bobby_batting <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/batting.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-stderr">
-<pre><code>Rows: 100 Columns: 35
-── Column specification ────────────────────────────────────────────────────────
-Delimiter: ","
-chr  (6): Player, Team, Lg, Pos, Awards, Player-additional
-dbl (29): Rk, Age, WAR, G, PA, AB, R, H, 2B, 3B, HR, RBI, SB, CS, BB, SO, BA...
-
-ℹ Use `spec()` to retrieve the full column specification for this data.
-ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
-</div>
-</div>
-<div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(bobby_batting)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-stdout">
-<pre><code>Rows: 100
-Columns: 35
-$ Rk                  &lt;dbl&gt; 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15,…
-$ Player              &lt;chr&gt; "Aaron Judge", "Bobby Witt Jr.", "Shohei Ohtani", …
-$ Age                 &lt;dbl&gt; 32, 24, 29, 23, 27, 25, 31, 30, 31, 30, 25, 29, 23…
-$ Team                &lt;chr&gt; "NYY", "KCR", "LAD", "BAL", "BOS", "NYY", "SFG", "…
-$ Lg                  &lt;chr&gt; "AL", "AL", "NL", "AL", "AL", "AL", "NL", "NL", "A…
-$ WAR                 &lt;dbl&gt; 10.8, 9.4, 9.2, 9.1, 8.7, 7.9, 7.1, 7.0, 6.8, 6.8,…
-$ G                   &lt;dbl&gt; 158, 161, 159, 159, 160, 157, 154, 152, 158, 136, …
-$ PA                  &lt;dbl&gt; 704, 709, 731, 719, 735, 713, 647, 689, 682, 583, …
-$ AB                  &lt;dbl&gt; 559, 636, 636, 630, 671, 576, 575, 618, 620, 504, …
-$ R                   &lt;dbl&gt; 122, 125, 134, 118, 111, 128, 98, 107, 114, 93, 98…
-$ H                   &lt;dbl&gt; 180, 211, 197, 177, 191, 166, 142, 169, 173, 147, …
-$ `2B`                &lt;dbl&gt; 36, 45, 38, 31, 48, 31, 39, 39, 39, 23, 44, 26, 27…
-$ `3B`                &lt;dbl&gt; 1, 11, 7, 7, 14, 4, 2, 1, 2, 2, 1, 2, 6, 2, 10, 1,…
-$ HR                  &lt;dbl&gt; 58, 32, 54, 37, 21, 41, 27, 33, 39, 36, 30, 39, 24…
-$ RBI                 &lt;dbl&gt; 144, 109, 130, 92, 75, 109, 78, 91, 118, 95, 103, …
-$ SB                  &lt;dbl&gt; 10, 31, 59, 21, 34, 7, 15, 29, 41, 7, 2, 11, 4, 6,…
-$ CS                  &lt;dbl&gt; 0, 12, 4, 4, 7, 4, 2, 4, 7, 1, 2, 3, 2, 0, 16, 10,…
-$ BB                  &lt;dbl&gt; 133, 57, 81, 78, 54, 129, 64, 56, 54, 65, 72, 59, …
-$ SO                  &lt;dbl&gt; 171, 106, 162, 159, 160, 119, 158, 127, 82, 106, 9…
-$ BA                  &lt;dbl&gt; 0.322, 0.332, 0.310, 0.281, 0.285, 0.288, 0.247, 0…
-$ OBP                 &lt;dbl&gt; 0.458, 0.389, 0.390, 0.364, 0.342, 0.419, 0.328, 0…
-$ SLG                 &lt;dbl&gt; 0.701, 0.588, 0.646, 0.529, 0.492, 0.569, 0.463, 0…
-$ OPS                 &lt;dbl&gt; 1.159, 0.977, 1.036, 0.893, 0.834, 0.989, 0.790, 0…
-$ `OPS+`              &lt;dbl&gt; 223, 171, 190, 159, 129, 178, 125, 138, 143, 155, …
-$ rOBA                &lt;dbl&gt; 0.484, 0.416, 0.449, 0.385, 0.373, 0.424, 0.351, 0…
-$ `Rbat+`             &lt;dbl&gt; 223, 171, 190, 157, 134, 179, 129, 141, 140, 155, …
-$ TB                  &lt;dbl&gt; 392, 374, 411, 333, 330, 328, 266, 309, 333, 282, …
-$ GIDP                &lt;dbl&gt; 22, 4, 7, 2, 6, 10, 13, 7, 9, 9, 16, 5, 2, 14, 12,…
-$ HBP                 &lt;dbl&gt; 9, 8, 6, 7, 6, 4, 6, 12, 1, 5, 5, 5, 5, 10, 6, 16,…
-$ SH                  &lt;dbl&gt; 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 4, 1,…
-$ SF                  &lt;dbl&gt; 2, 8, 5, 4, 3, 4, 2, 3, 6, 9, 4, 4, 2, 4, 1, 1, 1,…
-$ IBB                 &lt;dbl&gt; 20, 9, 10, 1, 1, 2, 3, 0, 12, 7, 12, 4, 3, 16, 2, …
-$ Pos                 &lt;chr&gt; "*8D/97", "*6/D", "*D", "*6/D", "*87", "*9/7DH", "…
-$ Awards              &lt;chr&gt; "AS", "AS", "AS", "AS", "AS", "AS", NA, NA, "AS", …
-$ `Player-additional` &lt;chr&gt; "judgeaa01", "wittbo02", "ohtansh01", "hendegu01",…</code></pre>
-</div>
-</div>
-<div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggrepel)</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(waffle)</span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggtext)</span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggalt)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-stderr">
-<pre><code>Registered S3 methods overwritten by 'ggalt':
-  method                  from   
-  grid.draw.absoluteGrob  ggplot2
-  grobHeight.absoluteGrob ggplot2
-  grobWidth.absoluteGrob  ggplot2
-  grobX.absoluteGrob      ggplot2
-  grobY.absoluteGrob      ggplot2</code></pre>
-</div>
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gt)</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>top_war <span class="ot">&lt;-</span> bobby_batting <span class="sc">|&gt;</span></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(</span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>    Rk <span class="sc">&lt;</span> <span class="dv">16</span></span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>bobby <span class="ot">&lt;-</span> top_war <span class="sc">|&gt;</span></span>
-<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(</span>
-<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>    Player <span class="sc">==</span> <span class="st">"Bobby Witt Jr."</span></span>
-<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>judge <span class="ot">&lt;-</span> top_war <span class="sc">|&gt;</span></span>
-<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(</span>
-<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>    Player <span class="sc">==</span> <span class="st">"Aaron Judge"</span></span>
-<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span> </span>
-<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">data=</span>top_war, <span class="fu">aes</span>(<span class="at">x=</span><span class="fu">reorder</span>(Player, H), <span class="at">weight=</span>H)) <span class="sc">+</span> </span>
-<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">data=</span>bobby, <span class="fu">aes</span>(<span class="at">x=</span><span class="fu">reorder</span>(Player, H), <span class="at">weight=</span>H), <span class="at">fill=</span><span class="st">"gold"</span>) <span class="sc">+</span></span>
-<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">data=</span>judge, <span class="fu">aes</span>(<span class="at">x=</span><span class="fu">reorder</span>(Player, H), <span class="at">weight=</span>H), <span class="at">fill=</span><span class="st">"navyblue"</span>) <span class="sc">+</span></span>
-<span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
-<span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb8-24"><a href="#cb8-24" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Bobby Witt Jr. Led the MLB in Hits"</span>,</span>
-<span id="cb8-25"><a href="#cb8-25" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"In 2024, &lt;span style = 'color:gold;'&gt;Witt Jr.&lt;/span&gt; outpaced &lt;span style = 'color:navy;'&gt;Judge&lt;/span&gt; by a decent margin in total hits."</span>,</span>
-<span id="cb8-26"><a href="#cb8-26" aria-hidden="true" tabindex="-1"></a>    <span class="at">caption =</span> <span class="st">"Sources: Baseball Reference | By Gio Carnazzo"</span>,</span>
-<span id="cb8-27"><a href="#cb8-27" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"MVP Candidates"</span>,</span>
-<span id="cb8-28"><a href="#cb8-28" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Hits"</span>,</span>
-<span id="cb8-29"><a href="#cb8-29" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span> <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb8-30"><a href="#cb8-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
-<span id="cb8-31"><a href="#cb8-31" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">20</span>, <span class="at">face =</span> <span class="st">"bold"</span>),</span>
-<span id="cb8-32"><a href="#cb8-32" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">16</span>),</span>
-<span id="cb8-33"><a href="#cb8-33" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.subtitle =</span> <span class="fu">element_textbox_simple</span>(<span class="at">size =</span> <span class="dv">10</span>),</span>
-<span id="cb8-34"><a href="#cb8-34" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid.minor =</span> <span class="fu">element_blank</span>()</span>
-<span id="cb8-35"><a href="#cb8-35" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>  top_war <span class="ot">&lt;-</span> bobby_batting <span class="sc">|&gt;</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    Rk <span class="sc">&lt;</span> <span class="dv">16</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>bobby <span class="ot">&lt;-</span> top_war <span class="sc">|&gt;</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    Player <span class="sc">==</span> <span class="st">"Bobby Witt Jr."</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>judge <span class="ot">&lt;-</span> top_war <span class="sc">|&gt;</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    Player <span class="sc">==</span> <span class="st">"Aaron Judge"</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span> </span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">data=</span>top_war, <span class="fu">aes</span>(<span class="at">x=</span><span class="fu">reorder</span>(Player, H), <span class="at">weight=</span>H)) <span class="sc">+</span> </span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">data=</span>bobby, <span class="fu">aes</span>(<span class="at">x=</span><span class="fu">reorder</span>(Player, H), <span class="at">weight=</span>H), <span class="at">fill=</span><span class="st">"gold"</span>) <span class="sc">+</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">data=</span>judge, <span class="fu">aes</span>(<span class="at">x=</span><span class="fu">reorder</span>(Player, H), <span class="at">weight=</span>H), <span class="at">fill=</span><span class="st">"navyblue"</span>) <span class="sc">+</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Bobby Witt Jr. Led the MLB in Hits"</span>,</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"In 2024, &lt;span style = 'color:gold;'&gt;Witt Jr.&lt;/span&gt; outpaced &lt;span style = 'color:navy;'&gt;Judge&lt;/span&gt; by a decent margin in total hits."</span>,</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>    <span class="at">caption =</span> <span class="st">"Sources: Baseball Reference | By Gio Carnazzo"</span>,</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"MVP Candidates"</span>,</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Hits"</span>,</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span> <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">20</span>, <span class="at">face =</span> <span class="st">"bold"</span>),</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">16</span>),</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.subtitle =</span> <span class="fu">element_textbox_simple</span>(<span class="at">size =</span> <span class="dv">10</span>),</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid.minor =</span> <span class="fu">element_blank</span>()</span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <div>
@@ -317,80 +231,40 @@ $ `Player-additional` &lt;chr&gt; "judgeaa01", "wittbo02", "ohtansh01", "hendegu
 </div>
 </div>
 </div>
+<p>Waffle chart to come.</p>
 <p>We can also look at how he compares to past AL MVP’s.</p>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>bobby_mvp_data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/mvp.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-stderr">
-<pre><code>Rows: 52 Columns: 19
-── Column specification ────────────────────────────────────────────────────────
-Delimiter: ","
-chr  (5): Lg, Name, Tm, Voting, -9999
-dbl (14): Year, WAR, BA, OBP, SLG, HR, RBI, SB, W, L, SV, ERA, IP, SO
-
-ℹ Use `spec()` to retrieve the full column specification for this data.
-ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
-</div>
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(bobby_mvp_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-stdout">
-<pre><code>Rows: 52
-Columns: 19
-$ Year    &lt;dbl&gt; 2024, 2024, 2023, 2023, 2022, 2022, 2021, 2021, 2020, 2020, 20…
-$ Lg      &lt;chr&gt; "AL", "AL", "AL", "NL", "AL", "NL", "AL", "NL", "AL", "NL", "A…
-$ Name    &lt;chr&gt; "Bobby Witt Jr.", "Aaron Judge", "Shohei Ohtani", "Ronald Acuñ…
-$ Tm      &lt;chr&gt; "KCR", "NYY", "LAA", "ATL", "NYY", "STL", "LAA", "PHI", "CHW",…
-$ WAR     &lt;dbl&gt; 9.4, 10.8, 9.9, 8.2, 10.5, 7.7, 8.9, 5.9, 3.0, 3.3, 7.9, 8.6, …
-$ BA      &lt;dbl&gt; 0.332, 0.322, 0.304, 0.337, 0.311, 0.317, 0.257, 0.309, 0.317,…
-$ OBP     &lt;dbl&gt; 0.389, 0.458, 0.412, 0.416, 0.425, 0.404, 0.372, 0.429, 0.370,…
-$ SLG     &lt;dbl&gt; 0.588, 0.701, 0.654, 0.596, 0.686, 0.578, 0.592, 0.615, 0.617,…
-$ HR      &lt;dbl&gt; 32, 58, 44, 41, 62, 35, 46, 35, 19, 13, 45, 47, 32, 36, 24, 59…
-$ RBI     &lt;dbl&gt; 109, 144, 95, 106, 131, 115, 100, 84, 60, 53, 104, 115, 80, 11…
-$ SB      &lt;dbl&gt; 31, 10, 20, 73, 16, 7, 26, 13, 0, 2, 11, 15, 30, 22, 32, 2, 30…
-$ W       &lt;dbl&gt; NA, NA, 10, NA, NA, NA, 9, NA, NA, NA, NA, NA, NA, NA, NA, NA,…
-$ L       &lt;dbl&gt; NA, NA, 5, NA, NA, NA, 2, NA, NA, NA, NA, NA, NA, NA, NA, NA, …
-$ SV      &lt;dbl&gt; NA, NA, 0, NA, NA, NA, 0, NA, NA, NA, NA, NA, NA, NA, NA, NA, …
-$ ERA     &lt;dbl&gt; NA, NA, 3.14, NA, NA, NA, 3.18, NA, NA, NA, NA, NA, NA, NA, NA…
-$ IP      &lt;dbl&gt; NA, NA, 132.0, NA, NA, NA, 130.1, NA, NA, NA, NA, NA, NA, NA, …
-$ SO      &lt;dbl&gt; NA, NA, 167, NA, NA, NA, 156, NA, NA, NA, NA, NA, NA, NA, NA, …
-$ Voting  &lt;chr&gt; "Voting", "Voting", "Voting", "Voting", "Voting", "Voting", "V…
-$ `-9999` &lt;chr&gt; "bobbywitt01", "judgeaa01", "ohtansh01", "acunaro01", "judgeaa…</code></pre>
-</div>
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>mvp_position <span class="ot">&lt;-</span> bobby_mvp_data <span class="sc">|&gt;</span></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(WAR <span class="sc">&gt;</span> <span class="dv">0</span> <span class="sc">&amp;</span> BA <span class="sc">&gt;</span> <span class="fl">0.2</span>)</span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>bob <span class="ot">&lt;-</span> mvp_position <span class="sc">|&gt;</span> <span class="fu">filter</span>(Name <span class="sc">==</span> <span class="st">"Bobby Witt Jr."</span>)</span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>aj <span class="ot">&lt;-</span> mvp_position <span class="sc">|&gt;</span> <span class="fu">filter</span>(Name <span class="sc">==</span> <span class="st">"Aaron Judge"</span>, Year <span class="sc">==</span> <span class="st">"2024"</span>)</span>
-<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span> </span>
-<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">data =</span> mvp_position, <span class="fu">aes</span>(<span class="at">x =</span> WAR, <span class="at">y =</span> BA), <span class="at">color=</span><span class="st">"lightgrey"</span>) <span class="sc">+</span></span>
-<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">data =</span> bob, <span class="fu">aes</span>(<span class="at">x =</span> WAR, <span class="at">y =</span> BA), <span class="at">color=</span><span class="st">"gold"</span>) <span class="sc">+</span></span>
-<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">data =</span> aj, <span class="fu">aes</span>(<span class="at">x =</span> WAR, <span class="at">y =</span> BA), <span class="at">color=</span><span class="st">"navy"</span>) <span class="sc">+</span></span>
-<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"WAR"</span>,</span>
-<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Batting Average"</span>, </span>
-<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">"Comparing Witt Jr. and Judge to Every MVP since 1999"</span>,</span>
-<span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"&lt;span style = 'color:gold;'&gt;Witt Jr.&lt;/span&gt; and &lt;span style = 'color:navy;'&gt;Judge&lt;/span&gt; end up amongst the most productive MVP seasons in the last 25 years."</span>,</span>
-<span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a>       <span class="at">caption=</span><span class="st">"Source: Baseball Reference | By Gio Carnazzo"</span>) <span class="sc">+</span></span>
-<span id="cb13-19"><a href="#cb13-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
-<span id="cb13-20"><a href="#cb13-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">16</span>, <span class="at">face =</span> <span class="st">"bold"</span>),</span>
-<span id="cb13-21"><a href="#cb13-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.subtitle =</span> <span class="fu">element_textbox_simple</span>(<span class="at">size =</span> <span class="dv">12</span>),</span>
-<span id="cb13-22"><a href="#cb13-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">10</span>),</span>
-<span id="cb13-23"><a href="#cb13-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid.minor =</span> <span class="fu">element_blank</span>()</span>
-<span id="cb13-24"><a href="#cb13-24" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>mvp_position <span class="ot">&lt;-</span> bobby_mvp_data <span class="sc">|&gt;</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(WAR <span class="sc">&gt;</span> <span class="dv">0</span> <span class="sc">&amp;</span> BA <span class="sc">&gt;</span> <span class="fl">0.2</span>)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>bob <span class="ot">&lt;-</span> mvp_position <span class="sc">|&gt;</span> <span class="fu">filter</span>(Name <span class="sc">==</span> <span class="st">"Bobby Witt Jr."</span>)</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>aj <span class="ot">&lt;-</span> mvp_position <span class="sc">|&gt;</span> <span class="fu">filter</span>(Name <span class="sc">==</span> <span class="st">"Aaron Judge"</span>, Year <span class="sc">==</span> <span class="st">"2024"</span>)</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span> </span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">data =</span> mvp_position, <span class="fu">aes</span>(<span class="at">x =</span> WAR, <span class="at">y =</span> BA), <span class="at">color=</span><span class="st">"lightgrey"</span>) <span class="sc">+</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">data =</span> bob, <span class="fu">aes</span>(<span class="at">x =</span> WAR, <span class="at">y =</span> BA), <span class="at">color=</span><span class="st">"gold"</span>) <span class="sc">+</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">data =</span> aj, <span class="fu">aes</span>(<span class="at">x =</span> WAR, <span class="at">y =</span> BA), <span class="at">color=</span><span class="st">"navy"</span>) <span class="sc">+</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"WAR"</span>,</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Batting Average"</span>, </span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">"Comparing Witt Jr. and Judge to Every MVP since 1999"</span>,</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"&lt;span style = 'color:gold;'&gt;Witt Jr.&lt;/span&gt; and &lt;span style = 'color:navy;'&gt;Judge&lt;/span&gt; end up amongst the most productive MVP seasons in the last 25 years."</span>,</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>       <span class="at">caption=</span><span class="st">"Source: Baseball Reference | By Gio Carnazzo"</span>) <span class="sc">+</span></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">16</span>, <span class="at">face =</span> <span class="st">"bold"</span>),</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.subtitle =</span> <span class="fu">element_textbox_simple</span>(<span class="at">size =</span> <span class="dv">12</span>),</span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">10</span>),</span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid.minor =</span> <span class="fu">element_blank</span>()</span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="index_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="index_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
