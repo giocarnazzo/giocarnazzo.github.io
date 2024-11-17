@@ -185,7 +185,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<p>Bobby Witt Jr.&nbsp;had a historic season in 2024. He deserved to win an MVP and the numbers show it.</p>
+<p>Bobby Witt Jr.&nbsp;had a historic season in 2024. He deserved to win an MVP and the numbers show it. The only player keeping him from being the betting favorite to win the award in the American League wore pinstripes and led the most popular team in baseball with ridiculous offensive numbers for the second time in three years.</p>
+<p>Aaron Judge was a thorn in the side of just about every team in baseball this season. His production at the plate was eerily similar to what he managed to do in the 2022 season when he wound up breaking the New York Yankees franchise record for home runs in a single season. He certainly deserves the recognition he will no doubt receive on November 21, when the AL’s most valuable player is announced. However, the 32-year-old who helped get the Yankees franchise to its first World Series since they won it all in 2009 was not the only player deserving of the award.</p>
+<p>No I am not referring to his teammate Juan Soto. Although he along with Judge had a stellar season, what if I told you there was a player in Kansas City, no not Patrick Mahomes, who also deserved to be in the conversation? Would you believe me? How about if I told you this player led the league in batting average, won the Silver Slugger and Gold Glove at the shortstop position and led his team to its first playoff appearance since 2015?</p>
+<p>Bobby Witt Jr.&nbsp;became the face of the Kansas City Royals the moment he was drafted in the summer of 2019 with the second overall selection. He was the definition of a five tool prospect, and immediately had expectations heaped upon him. He worked his way up through the Royals farm system fairly quickly showcasing all of the talents that made him such an exciting prospect. It is rare a player exceeds such lofty projections, but Witt Jr.&nbsp;has done that so far leading the league in hits in just his third professional season.</p>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
@@ -219,7 +222,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
 <span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
 <span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Bobby Witt Jr. Led the MLB in Hits"</span>,</span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"In 2024, &lt;span style = 'color:gold;'&gt;Witt Jr.&lt;/span&gt; outpaced &lt;span style = 'color:navy;'&gt;Judge&lt;/span&gt; by a decent margin in total hits."</span>,</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"In 2024, &lt;span style = 'color:gold;'&gt;Witt Jr.&lt;/span&gt; outpaced MVP candidate Aaron &lt;span style = 'color:navy;'&gt;Judge&lt;/span&gt; by a decent margin in total hits."</span>,</span>
 <span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>    <span class="at">caption =</span> <span class="st">"Sources: Baseball Reference | By Gio Carnazzo"</span>,</span>
 <span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"MVP Candidates"</span>,</span>
 <span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Hits"</span>,</span>
@@ -252,11 +255,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>bobby_batting <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/batting.csv"</span>)</span>
 <span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>bobert <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"2B"</span> <span class="ot">=</span> <span class="dv">45</span>, <span class="st">"3B"</span> <span class="ot">=</span> <span class="dv">11</span>, <span class="st">"HR"</span> <span class="ot">=</span> <span class="dv">32</span>, <span class="dv">7</span>)</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>bob <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"2B"</span> <span class="ot">=</span> <span class="dv">45</span>, <span class="st">"3B"</span> <span class="ot">=</span> <span class="dv">11</span>, <span class="st">"HR"</span> <span class="ot">=</span> <span class="dv">32</span>, <span class="dv">7</span>)</span>
 <span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>ajudge <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"2B"</span> <span class="ot">=</span> <span class="dv">36</span>, <span class="st">"3B"</span> <span class="ot">=</span> <span class="dv">1</span>, <span class="st">"HR"</span> <span class="ot">=</span> <span class="dv">58</span>)</span>
 <span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>waffle_bob <span class="ot">&lt;-</span> <span class="fu">waffle</span>(</span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>    bobert, </span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>    bob, </span>
 <span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">rows =</span> <span class="dv">6</span>, </span>
 <span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Bobby Witt Jr."</span>, </span>
 <span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">xlab =</span> <span class="st">"1 square = 1 hit"</span>, </span>
@@ -273,7 +276,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a><span class="fu">iron</span>(</span>
 <span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">waffle</span>(</span>
-<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>    bobert, </span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>    bob, </span>
 <span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>    <span class="at">rows =</span> <span class="dv">6</span>, </span>
 <span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Witt Jr. vs. Judge"</span>, </span>
 <span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>    <span class="at">xlab =</span> <span class="st">"1 square = 1 hit"</span>,</span>
