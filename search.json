@@ -11,7 +11,14 @@
     "href": "index.html",
     "title": "GiosSportsBlog",
     "section": "",
-    "text": "Does Bobby Witt Jr. Deserve an MVP in 2024?\n\n\n\n\n\n\nmlb\n\n\nbaseball\n\n\nkansas city royals\n\n\n\n\n\n\n\n\n\nNov 5, 2024\n\n\nGiovanni Carnazzo\n\n\n\n\n\n\nNo matching items"
+    "text": "Would You Rather Be the Royals or the Orioles in 2025?\n\n\n\n\n\n\nmlb\n\n\nbaseball\n\n\nkansas city royals\n\n\nbaltimore orioles\n\n\n\n\n\n\n\n\n\nDec 5, 2024\n\n\nGiovanni Carnazzo\n\n\n\n\n\n\n\n\n\n\n\n\nDoes Bobby Witt Jr. Deserve an MVP in 2024?\n\n\n\n\n\n\nmlb\n\n\nbaseball\n\n\nkansas city royals\n\n\n\n\n\n\n\n\n\nNov 5, 2024\n\n\nGiovanni Carnazzo\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "posts/royals-orioles-baseball-mlb-rebuild/index.html",
+    "href": "posts/royals-orioles-baseball-mlb-rebuild/index.html",
+    "title": "Would You Rather Be the Royals or the Orioles in 2025?",
+    "section": "",
+    "text": "The Kansas City Royals beat the Baltimore Orioles in the American League Division Series in 2024. Which team would you rather be heading into 2025?\nHere is more writing.\n\n\nCode\nlibrary(tidyverse)\nlibrary(ggrepel)\nlibrary(ggtext)\nlibrary(ggalt)\nlibrary(gt)\n\nbobby_batting &lt;- read_csv(\"data/batting.csv\")\n\n  top_war &lt;- bobby_batting |&gt;\n  filter(\n    Rk &lt; 16\n  )\n\nbobby &lt;- top_war |&gt;\n  filter(\n    Player == \"Bobby Witt Jr.\"\n  )\n\njudge &lt;- top_war |&gt;\n  filter(\n    Player == \"Aaron Judge\"\n  )\n\nggplot() + \n  geom_bar(data=top_war, aes(x=reorder(Player, H), weight=H), fill=\"lightgrey\") + \n  geom_bar(data=bobby, aes(x=reorder(Player, H), weight=H), fill=\"gold\") +\n  geom_bar(data=judge, aes(x=reorder(Player, H), weight=H), fill=\"navyblue\") +\n  coord_flip() +\n  labs(\n    title = \"Bobby Witt Jr. Led the MLB in Hits\",\n    subtitle = \"In 2024, &lt;span style = 'color:gold;'&gt;Witt Jr.&lt;/span&gt; outpaced MVP candidate &lt;span style = 'color:navy;'&gt;Aaron Judge&lt;/span&gt; by a decent margin in total hits.\",\n    caption = \"Sources: Baseball Reference | By Gio Carnazzo\",\n    x = \"MVP Candidates\",\n    y = \"Hits\",\n  ) + theme_minimal() +\n  theme(\n    plot.title = element_text(size = 18, face = \"bold\"),\n    axis.title = element_text(size = 12),\n    plot.subtitle = element_textbox_simple(size = 10),\n    panel.grid.minor = element_blank()\n  )\n\n\n\n\n\n\n\n\n\nHi!"
   },
   {
     "objectID": "posts/bobby-witt-jr-baseball-mlb-mvp-race/index.html",
