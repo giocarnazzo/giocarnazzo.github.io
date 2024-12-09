@@ -186,8 +186,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<p>The Kansas City Royals beat the Baltimore Orioles in the American League Division Series in 2024. Which team would you rather be heading into 2025?</p>
-<p>Here is more writing.</p>
+<p>The Kansas City Royals beat the Baltimore Orioles in the American League Wild Card Series in 2024. Which team would you rather be heading into 2025? The Royals swept Baltimore in the playoffs in October, but there is certainly a debate to be had.</p>
+<p>The two teams began their rebuilds under similar circumstances in 2017. Following back to back World Series appearances, the Kansas City Royals looked poised to potentially compete for another in 2016 with much of their core players returning. However, the team wound up being bang average. Finishing the year a disappointing 81-81.</p>
+<p>The O’s on the other hand won 89 games and got themselves a date with the Toronto Blue Jays in what was at the time still the Wild Card game. A heartbreaking loss in extras put them on the couch along with the 2015 champion Royals.</p>
+<p>Both organizations decided to give it one more go in 2017 to some extent with aging stars in the last years of their contracts, but the writing was on the wall. <a href="https://www.baseball-reference.com/leagues/majors/2024-standard-batting.shtml">Baseball Reference</a> puts the numbers for every big league hitter together. The site also includes player and team stats dating all the way back to before the live ball era. We are going to look at some to gauge the trajectory of the Royals and Orioles rebuilds and make an attempt at comparing them.</p>
+<p>The easiest way to do that is by first comparing the number of wins the two organizations had between 2017 and this most recent season.</p>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
@@ -203,8 +206,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> royals_orioles) <span class="sc">+</span></span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="fu">aes</span>(<span class="at">x =</span> Year, <span class="at">y =</span> W, <span class="at">fill =</span> Tm), <span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">position =</span> <span class="st">"dodge"</span>, <span class="at">width =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"The Royals and Orioles began rebuilds in 2017"</span>,</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"In 2024, the &lt;span style = 'color:blue;'&gt;Royals&lt;/span&gt; and &lt;span style = 'color:orange;'&gt;Orioles&lt;/span&gt; met in the Wild Card round with &lt;span style = 'color:blue;'&gt;Kansas City&lt;/span&gt; coming out on top."</span>,</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Their rebuilds followed a similar trajectory until 2020"</span>,</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"Once COVID hit, the &lt;span style = 'color:blue;'&gt;Royals&lt;/span&gt; tried speeding their's up while the &lt;span style = 'color:orange;'&gt;Orioles&lt;/span&gt; followed the path to prolonged success."</span>,</span>
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">caption =</span> <span class="st">"Sources: Baseball Reference | By Gio Carnazzo"</span>,</span>
 <span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Year"</span>,</span>
 <span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Wins"</span></span>
@@ -212,7 +215,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"orange"</span>, <span class="st">"blue"</span>)) <span class="sc">+</span></span>
 <span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
 <span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">16</span>, <span class="at">face =</span> <span class="st">"bold"</span>),</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">14</span>, <span class="at">face =</span> <span class="st">"bold"</span>),</span>
 <span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">10</span>),</span>
 <span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.subtitle =</span> <span class="fu">element_textbox_simple</span>(<span class="at">size =</span> <span class="dv">10</span>),</span>
 <span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid.minor =</span> <span class="fu">element_blank</span>()</span>
