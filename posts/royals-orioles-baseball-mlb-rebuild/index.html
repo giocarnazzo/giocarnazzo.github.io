@@ -207,7 +207,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="fu">aes</span>(<span class="at">x =</span> Year, <span class="at">y =</span> W, <span class="at">fill =</span> Tm), <span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">position =</span> <span class="st">"dodge"</span>, <span class="at">width =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Their rebuilds followed a similar trajectory until 2020"</span>,</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"Once COVID hit, the &lt;span style = 'color:blue;'&gt;Royals&lt;/span&gt; tried speeding their's up while the &lt;span style = 'color:orange;'&gt;Orioles&lt;/span&gt; followed the path to prolonged success."</span>,</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"Once COVID hit, the &lt;span style = 'color:blue;'&gt;Royals&lt;/span&gt; tried speeding their's up while the &lt;span style = 'color:orange;'&gt;Orioles&lt;/span&gt; followed the path to sustainable success."</span>,</span>
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">caption =</span> <span class="st">"Sources: Baseball Reference | By Gio Carnazzo"</span>,</span>
 <span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Year"</span>,</span>
 <span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Wins"</span></span>
@@ -255,8 +255,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
 <span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Run Differential"</span>,</span>
 <span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Year"</span>, </span>
-<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Offensive progression throughout the Royals rebuild"</span>,</span>
-<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"&lt;span style = 'color:blue;'&gt;Kansas City&lt;/span&gt; started winning as they fixed their pitching staff and began to score more runs."</span>,</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"The Royals offense struggled for much of the rebuild"</span>,</span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"&lt;span style = 'color:blue;'&gt;Kansas City&lt;/span&gt; had two nearly identically poor stretches spanning the three seasons before COVID and the three after."</span>,</span>
 <span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">caption =</span> <span class="st">"Sources: Baseball Reference | By Gio Carnazzo"</span>) <span class="sc">+</span></span>
 <span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span> </span>
 <span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
@@ -300,8 +300,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
 <span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Run Differential"</span>,</span>
 <span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Year"</span>, </span>
-<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Offensive progression throughout the Orioles rebuild"</span>,</span>
-<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"&lt;span style = 'color:orange;'&gt;Baltimore&lt;/span&gt; started winning as they started scoring more runs and giving up less."</span>,</span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"The Orioles began to see progress in 2022"</span>,</span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"&lt;span style = 'color:orange;'&gt;Baltimore&lt;/span&gt; started winning by closing the gap in run differential and eventually turning the tables."</span>,</span>
 <span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">caption =</span> <span class="st">"Sources: Baseball Reference | By Gio Carnazzo"</span>) <span class="sc">+</span></span>
 <span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span> </span>
 <span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
@@ -322,7 +322,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Unlike KC, they saw pretty steady progression throughout the rebuild. The Royals negative run margin pretty much stayed the chasm it was up following 2020 up until 2024, but the Orioles began to give up less and score more with every year that passed.</p>
 <p>This showed a solid plan was in place and they took the steps they needed to go from one level to the next. So, how did the two teams take such different paths and somehow wind up in the same place in 2024?</p>
 <p>Star players in sports are the ultimate equalizer. Especially when they elevate the play of the athletes around them. Bobby Witt Jr.&nbsp;arrived in 2023, but his career took off in 2024. Gunnar Henderson’s did as well. The two superstars headlined a class of prospects for both teams that were developed by the organization during the early years of the rebuilds.</p>
-<p>There are certainly guys like Cedric Mullins and Salvador Perez who stuck it out, but they are few and far between. In fact they are the only two position players that played on either team before COVID. The rest of the highlighted dots represent prospects from both teams that were developed before 2020 and promoted after.</p>
+<p>There are certainly guys like Cedric Mullins and Salvador Perez who stuck it out, but they are few and far between. In fact they are the only two position players that played on either team before COVID.</p>
+<p>In this plot, statistical output is measured by way of wins above replacement, or WAR, and total plate appearances which is typically a pretty good indicator of which position players are hitting at the top of their respective lineups. The highlighted dots for both teams show individuals, either drafted or signed through international free agency, that have never been part of any other organization. The grey dots show players brought in from outside the organization. Let’s take a look at which type of player made the biggest impact on these teams in 2024.</p>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
@@ -356,8 +357,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
 <span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"WAR"</span>,</span>
 <span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Plate Appearances"</span>, </span>
-<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">"Comparing the players currently on the rosters that joined during the rebuild"</span>,</span>
-<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"The &lt;span style = 'color:blue;'&gt;Royals&lt;/span&gt; and &lt;span style = 'color:orange;'&gt;Orioles&lt;/span&gt; utilized the draft and international free agency to rebuild their lineups."</span>,</span>
+<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">"Homegrown talent paved the path to success for both teams"</span>,</span>
+<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"The &lt;span style = 'color:blue;'&gt;Royals homegrown players&lt;/span&gt; and &lt;span style = 'color:orange;'&gt;Orioles homegrown players&lt;/span&gt; produced at a higher level in 2024 than almost all of the players brought in from outside the organizations."</span>,</span>
 <span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a>       <span class="at">caption=</span><span class="st">"Source: Baseball Reference | By Gio Carnazzo"</span>) <span class="sc">+</span></span>
 <span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
 <span id="cb4-35"><a href="#cb4-35" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">16</span>, <span class="at">face =</span> <span class="st">"bold"</span>),</span>
@@ -374,7 +375,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<p>Last bit!</p>
+<p>Clearly, the majority of the players coming up most often for these two teams last season were guys developed within the organization. However, what is also interesting is that many of the highlighted dots representing homegrown talent had a higher WAR than all but a few of the players brought in from outside the organization. This shows both teams placed a premium on developing the next wave of players who would inevitably be the difference makers for their organizations rather than acquiring them through trade or free agency.</p>
 
 
 
